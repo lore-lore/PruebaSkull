@@ -1,0 +1,43 @@
+body{
+    /*-color: red;*/
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 30px;
+    text-align: center;
+}
+h3{
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.my-class{
+    margin:100px auto;
+    width: 500px;
+    height: 800px;
+}
+.titulo{
+    margin-top: 100px;
+    overflow: hidden;
+    padding: 20px 50px 15px 50px;
+    background: rgba(0,129,125,0.5);
+    -moz-border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    color: #000000;
+
+}
+.cuerpo{
+    overflow: hidden;
+    padding: 50px 50px 55px 50px;
+    background: rgba(0,0,0,0.1);
+    -moz-border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;   
+}
+.mybtn{
+    height: 50px;
+    background: #00817D;
+    border: 0;
+    font-size: 16px;
+    font-weight:500; 
+    line-height:40px;
+    color:#fff;
+}
