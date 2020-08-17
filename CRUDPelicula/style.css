@@ -1,0 +1,11 @@
+.alert{
+	display: none;
+	width: 100%
+}
+.edi{
+	width: 50%;
+}
+
+.modal-header{
+	background-color: #E9E0FB ;
+}

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+     <!--CSS--> 
+    <link rel="stylesheet" href="media/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media/font-awesome/css/font-awesome.css">
+    <title>CRUDPelicula</title>
+  </head>
+  <body>
+    <header>
+      <h3 class="titulo p-3 mb-2 bg-secondary text-white text-center">Gestion de peliculas</h3>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2">
+          <button id="btnAbrirAgregar" class="btn btn-success"><i class="fa fa-plus"></i> Nuevo</button>
+        </div>
+        <div class="col-lg-3 alert alert-success" role="alert"></div>
+        <div class="col-lg-3 alert alert-danger" role="alert"></div>
+        <div class="col-lg-3 alert alert-info" role="alert"></div>
+    
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+           <table class="table-responsive-md table table-striped">
+            <thead >
+              <tr>
+                <th>Nombre</th>
+                <th>Estreno</th>
+                <th>Genero</th>
+                <th>Duración</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="tbody" class="tbody">           
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div> 
+
+      <!-- Modal para editar -->
+    <div class="modal fade" id="modalEliminar" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" >Eliminar pelicula</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <input type="hidden" class="form-control" id="idD" >
+              <label for="exampleInputPassword1">¿Seguro que desea eliminar?</label>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" id="btnEliminar">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Modal para editar -->
+    <div class="modal fade" id="modalEditar" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" >Editar pelicula</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <input type="hidden" class="form-control" id="idU" >
+              <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" id="nombreU" placeholder="Escriba el nombre">
+              </div>
+              <div class="form-group">
+                <label>Año de estreno</label>
+                <input type="text" class="form-control" id="estrenoU" placeholder="Escriba el año (2020)">
+              </div>
+              <div class="form-group">
+                <label>Genero</label>
+                <input type="text" class="form-control" id="generoU" placeholder="Escriba el genero (romance, mucical, etc)">
+              </div>
+              <div class="form-group">
+                <label>Duración de la pelicula</label>
+                <input type="text" class="form-control" id="duracionU" placeholder="Escriba el la duracion (2h 55m)">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" id="btnEditar">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Modal para agregar nuevo-->
+    <div class="modal fade" id="modalAgregar" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" >Nueva Pelicula</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Escriba el nombre">
+              </div>
+              <div class="form-group">
+                <label>Año de estreno</label>
+                <input type="text" class="form-control" id="estreno" placeholder="Escriba el año (2020)">
+              </div>
+              <div class="form-group">
+                <label>Genero</label>
+                <input type="text" class="form-control" id="genero" placeholder="Escriba el genero (romance, mucical, etc)">
+              </div>
+              <div class="form-group">
+                <label>Duración de la pelicula</label>
+                <input type="text" class="form-control" id="duracion" placeholder="Escriba el la duracion (2h 55m)">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+     <!--Javascript-->  
+   
+    <script src="media/js/jquery.min.js"></script>
+    <script src="media/js/bootstrap.min.js"></script>
+    <script src="media/funciones.js" ></script>
+
+  </body>
+</html>
